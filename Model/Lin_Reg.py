@@ -17,6 +17,13 @@ class Linreg:
 
     def error_mult(self, data):
         error_mult_dict = []
+        for row in col1 of dataframe:
+            error_mult_dict = row - np.mean(data)
+
+        return error_mult_dict
+
+    def slope(self, data):
+
 
 
 
