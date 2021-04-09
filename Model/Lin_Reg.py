@@ -30,12 +30,17 @@ class Linreg:
         """
         sum_x = 0
         sum_y = 0
-        mean_diff_x = 0
-        mean_diff_y = 0
         for i in self.dict_list:
             sum_x += i[0]
         for i in self.dict_list:
             sum_y += i[1]
+
+        mean_x = sum_x / len(self.dict_list)
+        mean_y = sum_y / len(self.dict_list)
+
+        for i in self.dict_list:
+            self.error_dict[i] = i[0] - mean_x
+# TODO make list for x values and another for y values. Will be much easier to do arithmetic on
 
         return self.error_dict
 
