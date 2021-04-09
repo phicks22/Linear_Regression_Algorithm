@@ -9,23 +9,35 @@ class Linreg:
         self.err_mult_dict = dict()
         self.slope = 0
         self.y_int = 0
+        self.dict_list = list()
 
 
     def open_file(self, fileAsString):
-        dict_list = list()
         with open(fileAsString) as f:
             records = csv.DictReader(f)
             for row in records:
-                dict_list.append(row)
+                self.dict_list.append(row)
 
-        return dict_list
+        return self.dict_list
 
-    def error_mean(self, data):
-        error_dict = dict()
-        for row in col1 of dataframe:
-            error_dict[col] = row - np.mean(data)
+    def error_mean(self):
+        """
+        Calculates the mean and difference from the means for x and y values.
 
-        return error_dict
+        :arg: none
+        :return: self.error_dict
+
+        """
+        sum_x = 0
+        sum_y = 0
+        mean_diff_x = 0
+        mean_diff_y = 0
+        for i in self.dict_list:
+            sum_x += i[0]
+        for i in self.dict_list:
+            sum_y += i[1]
+
+        return self.error_dict
 
     def error_mult(self, data):
         error_mult_dict = dict()
