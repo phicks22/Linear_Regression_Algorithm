@@ -1,5 +1,5 @@
 import numpy as np
-import pandas as pd
+import csv
 
 class Linreg:
 
@@ -7,14 +7,18 @@ class Linreg:
         self.file = file
         self.error_dict = dict()
         self.err_mult_dict = dict()
-        self.slope = slope
-        self.y_int = y_int
+        self.slope = 0
+        self.y_int = 0
 
 
     def open_file(self, fileAsString):
-        data = pd.read_csv(fileAsString)
+        dict_list = list()
+        with open(fileAsString) as f:
+            records = csv.DictReader(f)
+            for row in records:
+                dict_list.append(row)
 
-        return data
+        return dict_list
 
     def error_mean(self, data):
         error_dict = dict()

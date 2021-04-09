@@ -5,7 +5,7 @@ with open("/Users/parkerhicks/Desktop/Biostats_data/chap16q15LanguageGreyMatter.
     records = csv.DictReader(f)
     for row in records:
         dict_list.append(row)
-    print(dict_list)
+
 
 example = dict_list[0]
 print(example)
